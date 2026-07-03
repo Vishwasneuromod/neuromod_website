@@ -1,5 +1,5 @@
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useRef, useEffect } from "react";
 import doctorHero from "../assets/images/doctor-hero.jpg";
 
 const stats = [
@@ -94,8 +94,7 @@ function TestimonialsCarousel() {
 
     const step = () => {
       if (!isPaused && track) {
-        track.scrollLeft += 1;
-        // seamless loop: when we've scrolled half the duplicated content, reset to 0
+        track.scrollLeft += 0.8;
         if (track.scrollLeft >= track.scrollWidth / 2) {
           track.scrollLeft = 0;
         }
@@ -105,19 +104,24 @@ function TestimonialsCarousel() {
 
     animId = requestAnimationFrame(step);
 
+    // pause on hover (desktop) and on touch (mobile) so native swipe isn't fought
     const pause = () => { isPaused = true; };
     const resume = () => { isPaused = false; };
+
     track.addEventListener("mouseenter", pause);
     track.addEventListener("mouseleave", resume);
+    track.addEventListener("touchstart", pause, { passive: true });
+    track.addEventListener("touchend", resume, { passive: true });
 
     return () => {
       cancelAnimationFrame(animId);
       track.removeEventListener("mouseenter", pause);
       track.removeEventListener("mouseleave", resume);
+      track.removeEventListener("touchstart", pause);
+      track.removeEventListener("touchend", resume);
     };
   }, []);
 
-  // duplicate cards for seamless infinite loop
   const cards = [...testimonials, ...testimonials];
 
   return (
@@ -128,8 +132,12 @@ function TestimonialsCarousel() {
       </h2>
       <div
         ref={trackRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth px-6"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="flex gap-6 overflow-x-auto px-6"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+        } as React.CSSProperties}
       >
         {cards.map((t, i) => (
           <div
