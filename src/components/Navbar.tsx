@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const services = [
-  { to: "/services/1", label: "Service 1" },
-  { to: "/services/2", label: "Service 2" },
-  { to: "/services/3", label: "Service 3" },
-  { to: "/services/4", label: "Service 4" },
+  { to: "/services/movement-disorders", label: "Movement Disorders" },
+  { to: "/services/epilepsy", label: "Epilepsy" },
+  { to: "/services/spasticity", label: "Spasticity" },
+  { to: "/services/chronic-pain", label: "Chronic Pain" },
 ];
 
 export default function Navbar() {
@@ -27,7 +27,7 @@ export default function Navbar() {
             NEUROMOD
           </span>
           <span className="text-xs text-gray-400 tracking-widest uppercase">
-            Dr. Vishwas
+            Dr. Vishwas H V
           </span>
         </Link>
 
@@ -35,33 +35,45 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/" className={linkClass("/")}>Home</Link>
 
-          {/* Services dropdown — extended hit area prevents gap-triggered close */}
+          {/* Tablet (md–lg): Services dropdown */}
           <div
-            className="relative"
+            className="relative lg:hidden"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors flex items-center gap-1 pb-2">
+            <button className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors flex items-center gap-1">
               Services
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {servicesOpen && (
-              /* -mt-2 pulls the menu up to cover the pb-2 gap so mouse never leaves the hover zone */
-              <div className="absolute top-full left-0 -mt-2 w-44 bg-white rounded-lg shadow-lg border border-gray-100 py-1 pt-3">
-                {services.map((s) => (
-                  <Link
-                    key={s.to}
-                    to={s.to}
-                    onClick={() => setServicesOpen(false)}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700"
-                  >
-                    {s.label}
-                  </Link>
-                ))}
-              </div>
+              <>
+                {/* invisible bridge keeps hover active across the gap so the menu doesn't close */}
+                <div className="absolute top-full left-0 w-full h-2" />
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-1">
+                  {services.map((s) => (
+                    <Link
+                      key={s.to}
+                      to={s.to}
+                      onClick={() => setServicesOpen(false)}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </>
             )}
+          </div>
+
+          {/* Large desktop (lg+): direct links */}
+          <div className="hidden lg:flex items-center gap-8">
+            {services.map((s) => (
+              <Link key={s.to} to={s.to} className={linkClass(s.to)}>
+                {s.label}
+              </Link>
+            ))}
           </div>
 
           <Link to="/about" className={linkClass("/about")}>About</Link>
@@ -70,7 +82,7 @@ export default function Navbar() {
             href="#contact"
             className="bg-teal-600 text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-teal-700 transition-colors"
           >
-            Book Appointment
+            Book a Consultation
           </a>
         </nav>
 
@@ -104,7 +116,7 @@ export default function Navbar() {
             className="bg-teal-600 text-white text-sm font-semibold px-5 py-2 rounded-full text-center hover:bg-teal-700"
             onClick={() => setMenuOpen(false)}
           >
-            Book Appointment
+            Book a Consultation
           </a>
         </div>
       )}

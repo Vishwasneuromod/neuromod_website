@@ -3,10 +3,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Service1 from "./pages/Service1";
-import Service2 from "./pages/Service2";
-import Service3 from "./pages/Service3";
-import Service4 from "./pages/Service4";
+import MovementDisorders from "./pages/MovementDisorders";
+import Epilepsy from "./pages/Epilepsy";
+import Spasticity from "./pages/Spasticity";
+import ChronicPain from "./pages/ChronicPain";
 
 function App() {
   return (
@@ -17,10 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services/1" element={<Service1 />} />
-            <Route path="/services/2" element={<Service2 />} />
-            <Route path="/services/3" element={<Service3 />} />
-            <Route path="/services/4" element={<Service4 />} />
+            <Route path="/services/movement-disorders" element={<MovementDisorders />} />
+            <Route path="/services/epilepsy" element={<Epilepsy />} />
+            <Route path="/services/spasticity" element={<Spasticity />} />
+            <Route path="/services/chronic-pain" element={<ChronicPain />} />
           </Routes>
         </main>
         <Footer />
