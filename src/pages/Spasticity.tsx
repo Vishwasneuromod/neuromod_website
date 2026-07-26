@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 
 export default function Spasticity() {
   return (
     <div>
+      <Seo
+        title="Spasticity Treatment — Stroke, Cerebral Palsy & Spinal Injury"
+        description="Stiffness after stroke, cerebral palsy or spinal cord injury, explained step by step — from therapy and oral medicines to botulinum toxin, intrathecal baclofen pumps and selective dorsal rhizotomy."
+        path="/services/spasticity"
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-teal-50 to-white py-16 px-6">
         <div className="max-w-4xl mx-auto">

@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 
 export default function ChronicPain() {
   return (
     <div>
+      <Seo
+        title="Chronic Pain & Spinal Cord Stimulation (SCS)"
+        description="Persistent nerve pain after spine surgery or CRPS — how spinal cord stimulation interrupts pain signals, with a trial run before any permanent implant, plus non-implant options like radiofrequency ablation."
+        path="/services/chronic-pain"
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-teal-50 to-white py-16 px-6">
         <div className="max-w-4xl mx-auto">

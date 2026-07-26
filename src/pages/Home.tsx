@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 import doctorHero from "../assets/images/doctor-hero.jpg";
 import movementDisordersImg from "../assets/images/services/movement-disorders.jpg";
 import epilepsyImg from "../assets/images/services/epilepsy.jpg";
@@ -156,6 +157,11 @@ function FAQSection() {
 export default function Home() {
   return (
     <div>
+      <Seo
+        title="Neurosurgery & Neuromodulation in Bengaluru"
+        description="Dr. Vishwas H V, Neurosurgeon (MBBS, DNB, FRCS), Bengaluru. Patient education on movement disorders, complex epilepsy, spasticity and chronic pain — deep brain stimulation, epilepsy surgery, baclofen pumps and spinal cord stimulation."
+        path="/"
+      />
       {/* ── Hero ── */}
       <section className="bg-gradient-to-br from-teal-50 via-white to-teal-50 py-24 px-6">
         <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">

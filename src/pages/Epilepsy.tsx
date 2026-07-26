@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 
 export default function Epilepsy() {
   return (
     <div>
+      <Seo
+        title="Complex Epilepsy & Epilepsy Surgery"
+        description="When two medicines haven't controlled seizures — presurgical evaluation (video-EEG, MRI, SEEG), resective surgery and neuromodulation options like VNS and thalamic DBS, explained honestly."
+        path="/services/epilepsy"
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-teal-50 to-white py-16 px-6">
         <div className="max-w-4xl mx-auto">

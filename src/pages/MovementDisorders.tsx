@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 
 export default function MovementDisorders() {
   return (
     <div>
+      <Seo
+        title="Movement Disorders & Deep Brain Stimulation (DBS)"
+        description="Parkinson's disease, essential tremor and dystonia explained in plain language — what deep brain stimulation (DBS) helps, what it doesn't, and who is a good candidate."
+        path="/services/movement-disorders"
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-teal-50 to-white py-16 px-6">
         <div className="max-w-4xl mx-auto">

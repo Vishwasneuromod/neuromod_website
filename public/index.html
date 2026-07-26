@@ -4,11 +4,16 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Dr. Vishwas H V, Neurosurgeon (MBBS, DNB, FRCS), Bengaluru. Patient education on movement disorders, complex epilepsy, spasticity and chronic pain — deep brain stimulation, epilepsy surgery, baclofen pumps and spinal cord stimulation, explained in plain language."
-    />
+    <meta name="theme-color" content="#0d7c7c" />
+    <meta name="robots" content="index, follow" />
+    <!--
+      No static meta description / canonical / og:title / og:description / og:url /
+      twitter:title / twitter:description here — react-helmet-async (see src/components/Seo.tsx)
+      sets these per route on the client, and duplicating them here would leave two
+      conflicting tags in the DOM (Helmet only manages tags it renders itself; it can't
+      remove ones already baked into this static file). The og:image/twitter:image/
+      og:site_name/og:type/twitter:card below stay static since they don't vary by page.
+    -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -25,6 +30,39 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Dr. Vishwas H V — Neurosurgery &amp; Neuromodulation | Bengaluru</title>
+
+    <!-- Open Graph / Twitter tags that don't vary by page -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NEUROMOD — Dr. Vishwas H V" />
+    <meta property="og:image" content="https://neuromod.in/dr-vishwas--h-v-4604.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://neuromod.in/dr-vishwas--h-v-4604.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "name": "Dr. Vishwas H V",
+        "image": "https://neuromod.in/dr-vishwas--h-v-4604.jpg",
+        "url": "https://neuromod.in/",
+        "medicalSpecialty": ["Neurosurgery", "Neuromodulation"],
+        "description": "Neurosurgeon and spine surgeon in Bengaluru specialising in functional neurosurgery and neuromodulation — movement disorders, drug-resistant epilepsy, spasticity and chronic pain.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Fortis Hospital, Bannerghatta Road",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "alumniOf": [
+          "M. S. Ramaiah Medical College",
+          "Walton Centre, Liverpool, UK"
+        ],
+        "sameAs": [
+          "https://www.fortishealthcare.com/doctors/dr-vishwas-h-v-4604-0"
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

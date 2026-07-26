@@ -1,6 +1,13 @@
+import Seo from "../components/Seo";
+
 export default function About() {
   return (
     <div>
+      <Seo
+        title="About Dr. Vishwas H V — Neurosurgeon, Bengaluru"
+        description="Dr. Vishwas H V — MBBS, DNB (Neurosurgery), FRCS (Surgical Neurology), Fellowship in Functional Neurosurgery & Complex Epilepsy at the Walton Centre, Liverpool, UK. Qualifications, fellowships and practice philosophy."
+        path="/about"
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-teal-50 to-white py-20 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
