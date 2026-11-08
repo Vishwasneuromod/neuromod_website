@@ -76,6 +76,7 @@ export default function Navbar() {
             ))}
           </div>
 
+          <Link to="/blog" className={linkClass("/blog")}>Blog</Link>
           <Link to="/about" className={linkClass("/about")}>About</Link>
 
           <a
@@ -110,6 +111,7 @@ export default function Navbar() {
               {s.label}
             </Link>
           ))}
+          <Link to="/blog" className={linkClass("/blog")} onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link to="/about" className={linkClass("/about")} onClick={() => setMenuOpen(false)}>About</Link>
           <a
             href="#contact"
