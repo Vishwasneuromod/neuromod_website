@@ -8,12 +8,12 @@ import epilepsyImg from "../assets/images/services/epilepsy.jpg";
 import spasticityImg from "../assets/images/services/spasticity.jpg";
 import chronicPainImg from "../assets/images/services/chronic-pain.jpg";
 
-const credentials = [
-  { value: "FRCS", label: "Surgical Neurology, Royal College of Surgeons of England" },
-  { value: "DNB", label: "Neurosurgery, National Board of Examinations" },
-  { value: "Liverpool, UK", label: "Fellowship, Functional Neurosurgery & Complex Epilepsy, Walton Centre" },
-  { value: "2019", label: "Best Paper Award, Indian Society of Stereotactic & Functional Neurosurgery" },
-];
+// const credentials = [
+//   { value: "FRCS", label: "Surgical Neurology, Royal College of Surgeons of England" },
+//   { value: "DNB", label: "Neurosurgery, National Board of Examinations" },
+//   { value: "Liverpool, UK", label: "Fellowship, Functional Neurosurgery & Complex Epilepsy, Walton Centre" },
+//   { value: "2019", label: "Best Paper Award, Indian Society of Stereotactic & Functional Neurosurgery" },
+// ];
 
 const services = [
   {
@@ -58,8 +58,8 @@ function FAQSection() {
     <section className="bg-gray-50 py-20 px-6" id="faq">
       <div className="max-w-6xl mx-auto">
         <p className="text-teal-600 text-sm font-semibold uppercase tracking-widest text-center mb-12">Start Here</p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left (50%): Why patient education */}
+        <div className="max-w-3xl mx-auto flex flex-col gap-12">
+          {/* Why patient education */}
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Why patient education, and why in this tone?</h2>
             <p className="text-gray-600 font-medium text-lg mb-6">
@@ -73,7 +73,7 @@ function FAQSection() {
             </p>
           </div>
 
-          {/* Right (50%): FAQ */}
+          {/* FAQ */}
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-8">Questions Patients Ask</h3>
             <div className="space-y-4">
@@ -132,12 +132,9 @@ export default function Home() {
         path="/"
       />
       {/* ── Hero ── */}
-      <section className="bg-gradient-to-br from-teal-50 via-white to-teal-50 py-24 px-6">
+      <section className="bg-gradient-to-br from-teal-50 via-white to-teal-50 py-32 px-6">
         <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="flex-1">
-            <span className="inline-block bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wider uppercase">
-              Neurosurgery &amp; Neuromodulation - BENGALURU
-            </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
               The brain works on electricity.{" "}
               <span className="text-teal-600">Sometimes, so does the treatment.</span>
@@ -155,12 +152,6 @@ export default function Home() {
               >
                 Explore Conditions
               </a>
-              <a
-                href="#contact"
-                className="border border-teal-600 text-teal-600 font-semibold px-7 py-3 rounded-full hover:bg-teal-50 transition-colors"
-              >
-                Book a Consultation
-              </a>
             </div>
           </div>
           {/* Doctor hero image */}
@@ -171,23 +162,12 @@ export default function Home() {
       </section>
 
       {/* ── Credentials strip ── */}
-      <section className="bg-teal-700 py-12 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-          {credentials.map((c) => (
-            <div key={c.label}>
-              <p className="text-2xl md:text-3xl font-extrabold">{c.value}</p>
-              <p className="text-teal-200 text-xs mt-2 leading-snug">{c.label}</p>
-            </div>
-          ))}
-        </div>
+      <section className="bg-teal-700 py-1 px-2">
       </section>
 
-      {/* ── Questions Patients Ask (FAQ) ── */}
-      <FAQSection />
 
-      
-      {/* ── Services ── */}
-      <section id="services" className="py-20 px-6 bg-white">
+        {/* ── Services ── */}
+      <section id="services" className="bg-teal-700 py-4 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <p className="text-teal-600 text-sm font-semibold uppercase tracking-widest text-center mb-2">Patient Education</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">Conditions We Treat</h2>
@@ -217,6 +197,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      
+      
+      {/* ── Questions Patients Ask (FAQ) ── */}
+      <FAQSection />
+
       
       {/* ── Quote ── */}
       <section className="bg-gray-50 py-14 px-6 text-center">
