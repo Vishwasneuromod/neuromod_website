@@ -36,7 +36,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-teal-400 mt-0.5">✦</span>
-              <span>Second opinions welcome for DBS, epilepsy surgery, baclofen pump or spinal cord stimulation.</span>
+              <span> For consultations regarding DBS, epilepsy surgery, baclofen pump or spinal cord stimulation.</span>
             </li>
           </ul>
           <a
